@@ -35,8 +35,8 @@ export const Container = styled.div`
   @media ${Mobile()} {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
 
     padding: 1.75rem;
 

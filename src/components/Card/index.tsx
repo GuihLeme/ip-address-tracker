@@ -1,15 +1,22 @@
 import React from 'react';
-import { useUser } from '../../hooks/user';
 
 import { Container } from './styles';
 
-const Card: React.FC = () => {
-  const { user } = useUser();
-  console.log(user)
+interface CardProps {
+  ip: string,
+  isp: string,
+  location: {
+    city: string,
+    region: string,
+    postalCode?: string,
+    timezone: string,
+  }
+}
 
-  const { ip, location, isp } = user;
+const Card: React.FC<CardProps> = ({ isp, ip, location }) => {
 
-  return user.location !== undefined ? (
+
+  return (
     <Container>
       <div>
         <span>Ip Address</span>
@@ -17,7 +24,10 @@ const Card: React.FC = () => {
       </div>
       <div>
         <span>Location</span>
-        <strong>{location.city}, {location.region} {location.postalCode}</strong>
+        {location.city === 'Carregando...'
+          ? (<strong>Carregando...</strong>)
+          : (<strong>{location.city}, {location.region} {location.postalCode}</strong>)
+        }
       </div>
       <div>
         <span>Timezone</span>
@@ -28,18 +38,7 @@ const Card: React.FC = () => {
         <strong>{isp}</strong>
       </div>
     </Container>
-  ) : (
-    <Container>
-      <span>Ip Address</span>
-      <strong>Carregando...</strong>
-      <span>Location</span>
-      <strong>Carregando...</strong>
-      <span>Timezone</span>
-      <strong>Carregando...</strong>
-      <span>Isp</span>
-      <strong>Carregando...</strong>
-    </Container>
-  );
+  )
 }
 
 export default Card;

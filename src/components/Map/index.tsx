@@ -1,32 +1,42 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
-import { useUser } from '../../hooks/user';
+import React, { useState } from 'react';
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
+import { LatLngLiteral } from 'leaflet';
 import mapIcon from '../../utils/mapIcon';
 
 import { Container } from './styles';
+import { useEffect } from 'react';
+import MapContent from './MapContent';
 
-const Map: React.FC = () => {
-  const { user } = useUser();
+interface Position extends LatLngLiteral {
+  lat: number,
+  lng: number,
+}
 
-  return user.location !== undefined ? (
+interface UserProps {
+  location: {
+    lat: number,
+    lng: number,
+  }
+}
+
+const initialPosition = { lat: 1, lng: 1 };
+
+const Map: React.FC<Position> = ({ lat, lng }) => {
+  const [position, setPosition] = useState(initialPosition);
+
+  useEffect(()=>{
+    const newPosition = { lat, lng }
+    setPosition(newPosition)
+  },[lat, lng])
+
+  return (
     <Container>
       <img src="/pattern-bg.png" alt="background" />
-      <MapContainer center={[user.location.lat, user.location.lng]} zoom={15} scrollWheelZoom={true}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ3VpaGxlbWUiLCJhIjoiY2tnNnJtN2E5MDA4aDJ0bnJxZ2RvMzVxbCJ9.S3WZXlwFwl5bYWW0qDBLMA"
-        />
-        <Marker
-          position={[user.location.lat, user.location.lng]}
-          icon={mapIcon}
-        />
+      <MapContainer center={position} zoom={13}>
+        <MapContent position={position}/>
       </MapContainer>
     </Container>
-  ) : (
-    <Container>
-      <img src="/pattern-bg.png" alt="background" />
-    </Container>
-  );
+  )
 }
 
 export default Map;
