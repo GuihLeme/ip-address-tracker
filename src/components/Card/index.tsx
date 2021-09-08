@@ -13,32 +13,31 @@ interface CardProps {
   }
 }
 
-const Card: React.FC<CardProps> = ({ isp, ip, location }) => {
+const Card: React.FC<CardProps> = ({ isp, ip, location }) => (
+  <Container>
+    <div>
+      <span>Ip Address</span>
+      <strong>{ip}</strong>
+    </div>
+    <div>
+      <span>Location</span>
 
+      <strong>
+        {location.city},
+        {location.region}
+        {location.postalCode}
+      </strong>
 
-  return (
-    <Container>
-      <div>
-        <span>Ip Address</span>
-        <strong>{ip}</strong>
-      </div>
-      <div>
-        <span>Location</span>
-        {location.city === 'Carregando...'
-          ? (<strong>Carregando...</strong>)
-          : (<strong>{location.city}, {location.region} {location.postalCode}</strong>)
-        }
-      </div>
-      <div>
-        <span>Timezone</span>
-        <strong>UTC {location.timezone}</strong>
-      </div>
-      <div>
-        <span>Isp</span>
-        <strong>{isp}</strong>
-      </div>
-    </Container>
-  )
-}
+    </div>
+    <div>
+      <span>Timezone</span>
+      <strong>UTC {location.timezone}</strong>
+    </div>
+    <div>
+      <span>Isp</span>
+      <strong>{isp}</strong>
+    </div>
+  </Container>
+)
 
 export default Card;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
+import { MapContainer } from 'react-leaflet'
 import { LatLngLiteral } from 'leaflet';
-import mapIcon from '../../utils/mapIcon';
 
 import { Container } from './styles';
 import { useEffect } from 'react';
@@ -10,13 +9,6 @@ import MapContent from './MapContent';
 interface Position extends LatLngLiteral {
   lat: number,
   lng: number,
-}
-
-interface UserProps {
-  location: {
-    lat: number,
-    lng: number,
-  }
 }
 
 const initialPosition = { lat: 1, lng: 1 };

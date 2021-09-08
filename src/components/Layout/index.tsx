@@ -3,12 +3,13 @@ import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import api from '../../services/api';
+
 import Card from '../Card';
 import Input from '../Input';
 import Map from '../Background';
 
 import { Container } from './styles';
-import api from '../../services/api';
 
 interface FormData {
   search: string,
