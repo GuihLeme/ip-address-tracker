@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import Card from '../Card';
 import Input from '../Input';
-import Map from '../Map';
+import Map from '../Background';
 
 import { Container } from './styles';
 import api from '../../services/api';
@@ -62,15 +62,29 @@ const Layout: React.FC = () => {
           abortEarly: false,
         });
 
-        const searchString = data.search;
-        const isSearchAnIpAddress = !!searchString.match(/^\d/) //it should return a boolean based on the first ~character
+        const searchString = data.search.trim();
+        const isSearchStringAnIpAddress = !!searchString.match(/^\d/) //it should return a boolean based on the first ~character
 
-        if(isSearchAnIpAddress) {
+        if(isSearchStringAnIpAddress) {
+
+
           const response = await api.get(`v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&ipAddress=${searchString}`)
           setUser(response.data)
         } else {
-          const response = await api.get(`v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&domain=${searchString}`)
-          setUser(response.data)
+          const HTTPRegex = /^https?:\/\//;
+          const isSearchStringStartsWithHTTP = searchString.startsWith('http')
+          if (isSearchStringStartsWithHTTP) {
+            const httpString = searchString.match(HTTPRegex)
+            const httpLength = httpString?.[0].length
+
+            const parsedSearchString = searchString.slice(httpLength)
+
+            const response = await api.get(`v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&domain=${parsedSearchString}`)
+            setUser(response.data)
+          } else {
+            const response = await api.get(`v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&domain=${searchString}`)
+            setUser(response.data)
+          }
         }
       } catch (err) {
         console.log(err)
