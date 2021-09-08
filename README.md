@@ -41,7 +41,6 @@ Then, run it using:
 ```sh
 yarn start
 ```
-https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=Leaflet&logoColor=white
 
 **NOTE: You gonna need set your keys/tokens in .env file as preset in .env.example. 
 
