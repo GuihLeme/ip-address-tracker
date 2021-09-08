@@ -16,6 +16,8 @@ export const Container = styled.div`
 
   margin-bottom: 1.5rem;
 
+  position: relative;
+
   input {
     flex: 1;
     padding: 1.25rem;
@@ -28,5 +30,19 @@ export const Container = styled.div`
     background-color: black;
     padding: 1.25rem 1.5rem;
     border-radius: 0 16px 16px 0;
+    transition: all .2s;
+
+    &:hover {
+      background-color: hsl(0, 0%, 17%);
+      cursor: pointer;
+    }
   }
+`
+
+export const Error = styled.span`
+  position: absolute;
+  top: -1.5rem;
+  right: 0;
+  color: #A7333F;
+  font-weight: 700;
 `

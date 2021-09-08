@@ -30,17 +30,18 @@ interface UserProps {
 const Layout: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const [user, setUser] = useState<UserProps>({
-    ip: 'Carregando...',
-    isp: 'Carregando...',
+    ip: 'Loading...',
+    isp: 'Loading...',
     location: {
-      city: 'Carregando...',
-      region: 'Carregando...',
-      postalCode: 'Carregando...',
-      timezone: 'Carregando...',
+      city: 'Loading...',
+      region: 'Loading...',
+      postalCode: 'Loading...',
+      timezone: 'Loading...',
       lat: 1,
       lng: 1
     }
   });
+  const [error, setError] = useState<string>()
 
   useEffect(()=>{
     api
@@ -66,8 +67,6 @@ const Layout: React.FC = () => {
         const isSearchStringAnIpAddress = !!searchString.match(/^\d/) //it should return a boolean based on the first ~character
 
         if(isSearchStringAnIpAddress) {
-
-
           const response = await api.get(`v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&ipAddress=${searchString}`)
           setUser(response.data)
         } else {
@@ -86,8 +85,9 @@ const Layout: React.FC = () => {
             setUser(response.data)
           }
         }
+        setError(undefined)
       } catch (err) {
-        console.log(err)
+        setError('Invalid IP address or Domain!')
       }
     },
   [setUser]);
@@ -103,7 +103,7 @@ const Layout: React.FC = () => {
       <div className='content'>
         <h1>IP Address Tracker</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <Input name='search' />
+          <Input name='search' error={error}/>
         </Form>
         <Card
           isp={user.isp}
