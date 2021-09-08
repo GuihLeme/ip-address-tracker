@@ -42,7 +42,7 @@ Then, run it using:
 yarn start
 ```
 
-**NOTE: You gonna need set your keys/tokens in .env file as preset in .env.example. 
+**NOTE: You gonna need set your keys/tokens up in .env file as preset in .env.example. 
 
 ### Built with
 
