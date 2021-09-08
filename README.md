@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# Frontend Mentor - IP Address Tracker solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [IP Address Tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [Running](#running)
+  - [Built with](#built-with)
+- [Author](#author)
+  - [Wanna know more about how I deal with this project?](#about-project)
 
-### `yarn start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The challenge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users should be able to:
 
-### `yarn test`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Links
 
-### `yarn build`
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/react-js-nextjs-sass-IuSg1Y0tF)
+- Live Site URL: [Blogr](https://blogr-gold.vercel.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone this repository, open its folder and install dependencies with:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+yarn
+```
 
-### `yarn eject`
+Then, run it using:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+<img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
+<img alt="Next JS" src="https://img.shields.io/badge/nextjs-%23000000.svg?&style=for-the-badge&logo=next.js&logoColor=white"/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Author
 
-## Learn More
+- LinkedIn - [Guih Leme](https://www.linkedin.com/in/guihleme/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## About Project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Wanna know more about how I deal with this project? I wrote about it in my [dev.to](https://dev.to/guihleme/frontendmentor-io-challenge-1-lak-temp-slug-6837965?preview=5210513d38a056a58c279ca7e532c26a6a6a9d8b982ce8a45900e927a890bb24386c0daab2be70763e09d6366508c4c8c311134bc2bd1478b4f7e3e8) 
+
