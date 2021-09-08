@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Rubik', sans-serif;
     font-size: 1.125rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   h1 {
