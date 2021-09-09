@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/react-js-nextjs-sass-IuSg1Y0tF)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/ip-address-tracker-with-react-styledcomponents-BehqgHsdc)
 - Live Site URL: [IP Address Tracker](https://ip-address-tracker-taupe-six.vercel.app/)
 
 ## Running
