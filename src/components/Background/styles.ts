@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
 
   .leaflet-container {
-    height: 100vh;
+    height: calc(100vh - 300px);
     width: 100vw;
   }
 `

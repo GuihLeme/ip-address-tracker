@@ -49,6 +49,7 @@ const Layout: React.FC = () => {
       .get<UserProps>(`/v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}`)
       .then(response => setUser(response.data))
   },[])
+  console.log(user)
 
   const handleSubmit = useCallback(
     async (data: FormData) => {
@@ -57,7 +58,7 @@ const Layout: React.FC = () => {
 
         const schema = Yup.object().shape({
           search: Yup.string()
-            .required('Search for an IP or domain correctly'),
+            .required(),
         });
 
         await schema.validate(data, {
