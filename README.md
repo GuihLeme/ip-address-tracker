@@ -57,5 +57,5 @@ yarn start
 
 ## About Project
 
-Wanna know more about how I deal with this project? I wrote about it in my [dev.to](https://dev.to/guihleme/frontendmentor-io-challenge-1-lak-temp-slug-6837965?preview=5210513d38a056a58c279ca7e532c26a6a6a9d8b982ce8a45900e927a890bb24386c0daab2be70763e09d6366508c4c8c311134bc2bd1478b4f7e3e8).
+Wanna know more about how I deal with this project? I wrote about it in my [dev.to](https://dev.to/guihleme/frontendmentor-io-challenge-1-o83).
 
